@@ -124,7 +124,7 @@ hr {
 
 @media(max-width:650px){
   .header {
-    background-image: url(/public/images/pattern-bg-mobile.png);
+    background-image: url(/images/pattern-bg-mobile.png);
   }
   input {
     height: 40px;

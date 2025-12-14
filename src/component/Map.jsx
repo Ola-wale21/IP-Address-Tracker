@@ -15,6 +15,14 @@ function Map(props) {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
+        const customIcon = L.icon({
+             iconUrl: "/images/icon-location.svg", 
+             iconSize: [25, 41],
+             iconAnchor: [12, 41],
+             popupAnchor: [1, -34],
+             tooltipAnchor: [16, -28],
+         });
+        
         const showCurrentLocation = () => {
             map.locate({setView: true, maxZoom: 16});
         }
@@ -22,7 +30,7 @@ function Map(props) {
                 var radius = e.accuracy;
 
                 if(!initialLocation){
-                    L.marker(e.latlng).addTo(map)
+                    L.marker(e.latlng, {icon: customIcon}).addTo(map)
                     .bindPopup("you're within "+ radius + " meters from this point").openPopup();
 
                     L.circle(e.latlng, radius).addTo(map);
@@ -36,7 +44,7 @@ function Map(props) {
     }else {
          const ipLocation = [props.lat, props.lng];
       map.setView(ipLocation, 13);
-      L.marker(ipLocation).addTo(map).bindPopup("IP Address Location").openPopup();
+      L.marker(ipLocation, {icon: customIcon}).addTo(map).bindPopup("IP Address Location").openPopup();
     }
 
 
