@@ -45,7 +45,7 @@ function Header(props) {
             <div className="input-box">
             <label htmlFor="ip-address"></label>
             <input type="text" id='ip-address' placeholder='192.212.174.101' onChange={handleChange} value={ipAddress}/>
-            <button type='submit' onClick={handleSearch}> <img src={`${import.meta.env.BASE_URL}images/icon-arrow.svg`} alt="icon-arrow;" /></button>
+            <button type='submit' onClick={handleSearch}> <img src="/images/icon-arrow.svg" alt="icon-arrow;" /></button>
             </div>
     </div>
 }

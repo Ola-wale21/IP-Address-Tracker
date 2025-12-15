@@ -10,7 +10,7 @@ function Map(props) {
         var map = L.map('map', {zoomControl: true}).setView([props.lat, props.lng], 13);
 
          const customIcon = L.icon({
-             iconUrl: `${import.meta.env.BASE_URL}images/icon-location.svg`,
+             iconUrl: "images/icon-location.svg",
              iconSize: [25, 41],
              iconAnchor: [12, 41],
              popupAnchor: [0, -35],
